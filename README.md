@@ -112,7 +112,7 @@ If you prefer to use the code of the GenerativeProteomics model directly, you ca
 4. Install the necessary packages: `pip install -r libraries.txt`
 
 
-#### How to Use
+#### How to Use GenerativeProteomics
 
 If you just want to impute a general dataset, the most straightforward and simplest way to run GenerativeProteomics is to run: `python generativeproteomics.py -i /path/to/file_to_impute.csv`
 Running in this manner will result in two separate training phases.
@@ -121,11 +121,16 @@ Running in this manner will result in two separate training phases.
 
 2) Imputation run: Then a proper training phase takes place using the entire dataset. An `imputed.csv` file will be created containing the imputed dataset.
 
-
 However, there are a few arguments which you may want to change. You can do this using a parameters.json file (you may find an example in `GenerativeProteomics/breast/parameters.json`) or you can choose them directly in the command line.
 
 Run with a parameters.json file: `python generativeproteomics.py --parameters /path/to/parameters.json`<br>
 Run with command line arguments: `python generativeproteomics.py -i /path/to/file_to_impute.csv -o imputed_name --ofolder ./results/ --it 2001`
+
+#### How to import and use a pre-trained model 
+
+Instead of running our trained model GenerativeProteomics, you can always use other inference forms. To do so, all you need to do is use the --model flag.
+
+Run the following command in order to use an alternative imputation form: `python generativeproteomics.py -i /path/to/file_to_impute.csv --model <name_of_model>`
 
 #### Arguments:
 
@@ -136,7 +141,7 @@ Run with command line arguments: `python generativeproteomics.py -i /path/to/fil
 `--miss`: The percentage of values to be concealed during the evaluation run (from `0` to `1`)<br>
 `--outall`: Set this argument to `1` if you want to output every metric<br> 
 `--override`: Set this argument to `1` if you want to delete the previously created files when writing the new output<br> 
-
+`--model`: Contains the name of the imputation form to run. Default value is the GenerativeProteomics model.
 
 
 If you want to test the efficacy of the code you may give a reference file containing a complete version of the dataset (without missing values): `python generativeproteomics.py -i /path/to/file_to_impute.csv --ref /path/to/complete_dataset.csv`
