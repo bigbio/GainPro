@@ -19,7 +19,7 @@ By running it in this manner, it will result in two separate training phases.
     Afterwards, a proper training phase takes place using the entire dataset. An **imputed.csv** file will be created containing the imputed dataset.
 
 However, there might be a few arguments which you may want to change. You can do this using a **parameters.json** file 
-(you may find an example in ``GenerativeProteomics/breast/parameters.json``) or you can choose them directly in the command line.
+(you may find an example in ``datasets/breast/parameters.json``) or you can choose them directly in the command line.
 
 Run with a parameters.json file: 
 

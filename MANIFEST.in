@@ -2,9 +2,11 @@
 include README.md
 include LICENSE
 
-# Include package data
-recursive-include GenerativeProteomics/breast *.csv *.json
-include GenerativeProteomics/parameters.json
+# Include configs
+recursive-include configs *.json
+
+# Include datasets
+recursive-include datasets *.csv *.tsv *.json
 
 # Include configs
 recursive-include configs *.json

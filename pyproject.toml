@@ -99,11 +99,7 @@ packages = ["GenerativeProteomics"]
 include-package-data = true
 
 [tool.setuptools.package-data]
-GenerativeProteomics = [
-    "breast/*.csv",
-    "breast/*.json",
-    "parameters.json",
-]
+GenerativeProteomics = []
 
 [tool.black]
 line-length = 100
