@@ -9,12 +9,13 @@ In this repository you may find a PyTorch implementation of Generative Adversari
 
 ## Table of Contents
 
-- [Repository Strucure](#repository-structure)
+- [Repository Structure](#repository-structure)
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
 - [GitHub](#github)
 - [Demo](#demo)
-- [References](#reference)
+- [DANN & GAIN Hybrid](#dann--gain-hybrid)
+- [References](#references)
 
 ## Repository Structure
 
@@ -162,6 +163,13 @@ If you want to compare the imputation with the original dataset run: `python gen
 
 
 If you want to go deep in the analysis of every metric you either set `--outall` to `1` or you run the code in an IPython console, this way you can access every variable you want in the `metrics` object, e.g. `metrics.loss_D`.
+
+
+## DANN & GAIN Hybrid
+
+The repository also includes a hybrid model combining Domain Adversarial Neural Networks (DANN) with GAIN for domain-adaptive imputation.
+
+To prepare the HeLa dataset for the **DANN & GAIN** hybrid model, run the `hela_dann.ipynb` notebook first and alter the directory of the HeLa dataset in the third cell of the notebook.
 
 
 ## References
