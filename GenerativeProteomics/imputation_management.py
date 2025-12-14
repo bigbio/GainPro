@@ -1,4 +1,3 @@
-from GenerativeProteomics.models.base_abstract import ImputationModel
 from GenerativeProteomics.models.gain_dann import GainDannImputationModel
 from GenerativeProteomics.models.medium import MediumImputationModel
 
