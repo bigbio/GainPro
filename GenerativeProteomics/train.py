@@ -18,7 +18,7 @@ from GenerativeProteomics.params_gain_dann import ParamsGainDann
 from GenerativeProteomics.early_stopping import EarlyStopping
 from GenerativeProteomics.metrics import MetricsTracker
 from GenerativeProteomics.evaluation import EvaluationTracker
-from GenerativeProteomics.dann_utils import save_model, save_metadata
+from GenerativeProteomics.dann_utils import save_model
 
 import logging
 
