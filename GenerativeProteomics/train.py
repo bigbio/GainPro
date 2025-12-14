@@ -8,17 +8,17 @@ from sklearn.model_selection import StratifiedKFold
 from torch.utils.data import DataLoader, TensorDataset, WeightedRandomSampler
 
 # model
-from gaindannmodel import GAIN_DANN
-from hypers import Params
-from dataset import generate_hint
-from output import Metrics
+from GenerativeProteomics.gain_dann_model import GainDann
+from GenerativeProteomics.hypers import Params
+from GenerativeProteomics.dataset import generate_hint
+from GenerativeProteomics.output import Metrics
 
-from data_utils import Data
-from paramsgaindann import ParamsGainDann
-from early_stopping import EarlyStopping
-from metrics import MetricsTracker
-from evaluation import EvaluationTracker
-from dann_utils import save_model, save_metadata
+from GenerativeProteomics.data_utils import Data
+from GenerativeProteomics.params_gain_dann import ParamsGainDann
+from GenerativeProteomics.early_stopping import EarlyStopping
+from GenerativeProteomics.metrics import MetricsTracker
+from GenerativeProteomics.evaluation import EvaluationTracker
+from GenerativeProteomics.dann_utils import save_model, save_metadata
 
 import logging
 
@@ -55,13 +55,13 @@ class GainDannTrain:
             nn.init.xavier_uniform_(m.weight)
             nn.init.constant_(m.bias, 0)
     
-    def initialize_model(self) -> GAIN_DANN:
+    def initialize_model(self) -> GainDann:
         input_dim = self.data.n_proteins
         gain_params = Params()
         gain_metrics = Metrics(gain_params)
         protein_names = self.data.protein_names
 
-        model = GAIN_DANN(protein_names, input_dim, latent_dim=input_dim, n_class=self.data.n_projects, num_hidden_layers=self.hypers["num_hidden_layers"], dann_params=self.hypers, gain_params=gain_params, gain_metrics=gain_metrics)
+        model = GainDann(protein_names, input_dim, latent_dim=input_dim, n_class=self.data.n_projects, num_hidden_layers=self.hypers["num_hidden_layers"], dann_params=self.hypers, gain_params=gain_params, gain_metrics=gain_metrics)
         model.encoder.apply(self.init_weights)
         model.decoder.apply(self.init_weights)
         model.to(self.device)

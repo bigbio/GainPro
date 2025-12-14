@@ -9,18 +9,18 @@ import matplotlib.pyplot as plt
 import umap.umap_ as umap
 
 # model
-from gaindannmodel import GAIN_DANN
-from hypers import Params
-from output import Metrics
-from paramsgaindann import ParamsGainDann
-from data_utils import Data
-from train import GainDannTrain
-from dann_utils import inverse_transform_output
+from GenerativeProteomics.gain_dann_model import GainDann
+from GenerativeProteomics.hypers import Params
+from GenerativeProteomics.output import Metrics
+from GenerativeProteomics.params_gain_dann import ParamsGainDann
+from GenerativeProteomics.data_utils import Data
+from GenerativeProteomics.train import GainDannTrain
+from GenerativeProteomics.dann_utils import inverse_transform_output
 
 # post analysis
 # from umap_analysis import umap_analysis
 # from pca_analysis import pca_analysis
-from correlation import correlation_measured_predicted
+from GenerativeProteomics.correlation import correlation_measured_predicted
 
 import logging
 import argparse
@@ -121,7 +121,7 @@ if __name__ == "__main__":
                        "dropout_rate": metadata["params"]["dropout_rate"]}
 
         # load model
-        model = GAIN_DANN(metadata["protein_names"], metadata["input_dim"], latent_dim=metadata["latent_dim"], n_class=metadata["n_class"], num_hidden_layers=metadata["params"]["num_hidden_layers"], 
+        model = GainDann(metadata["protein_names"], metadata["input_dim"], latent_dim=metadata["latent_dim"], n_class=metadata["n_class"], num_hidden_layers=metadata["params"]["num_hidden_layers"], 
                         dann_params=dann_params, gain_params=gain_params, gain_metrics=gain_metrics)
         model_path = f"{checkpoint_dir}/model.pt"
         if not os.path.isfile(model_path):
@@ -208,7 +208,7 @@ if __name__ == "__main__":
                        "dropout_rate": metadata["params"]["dropout_rate"]}
 
         # load model
-        model = GAIN_DANN(metadata["protein_names"], metadata["input_dim"], latent_dim=metadata["latent_dim"], n_class=metadata["n_class"], num_hidden_layers=metadata["params"]["num_hidden_layers"], 
+        model = GainDann(metadata["protein_names"], metadata["input_dim"], latent_dim=metadata["latent_dim"], n_class=metadata["n_class"], num_hidden_layers=metadata["params"]["num_hidden_layers"], 
                         dann_params=dann_params, gain_params=gain_params, gain_metrics=gain_metrics)
         model_path = f"{checkpoint_dir}/model.pt"
         if not os.path.isfile(model_path):

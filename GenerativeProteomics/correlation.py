@@ -7,7 +7,7 @@ import logging
 import os
 from datetime import datetime
 
-from dann_utils import inverse_transform_output
+from GenerativeProteomics.dann_utils import inverse_transform_output
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

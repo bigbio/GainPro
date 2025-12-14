@@ -1,0 +1,18 @@
+# Include documentation
+include README.md
+include LICENSE
+
+# Include package data
+recursive-include GenerativeProteomics/breast *.csv *.json
+include GenerativeProteomics/parameters.json
+
+# Include configs
+recursive-include configs *.json
+
+# Exclude tests and development files
+recursive-exclude tests *
+recursive-exclude use-case *
+recursive-exclude docs *
+recursive-exclude .github *
+exclude .gitignore
+exclude .readthedocs.yaml

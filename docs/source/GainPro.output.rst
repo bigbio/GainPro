@@ -1,7 +1,7 @@
 Metrics Class
 ========================   
 
-.. automodule:: ProtoGain.output
+.. automodule:: GenerativeProteomics.output
    :members:
    :undoc-members:
    :show-inheritance:
@@ -45,7 +45,7 @@ Methods
         - CPU and RAM usage metrics.
     3. Sets data_imputed and ref_data_imputed to None until values are computed.
 
-- create_output(cls, data, name: str)
+- create_output(self, data, name: str)
 
     Stores model output (e.g., imputed data) in CSV files.
     It saves the data to the output_folder, either overwriting existing files or appending new data.

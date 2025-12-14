@@ -8,12 +8,12 @@ responsible for different tasks in the processing and imputation of large proteo
 .. toctree::
    :maxdepth: 20
 
-   ProtoGain.dataset
-   ProtoGain.hypers
-   ProtoGain.model
-   ProtoGain.output
-   ProtoGain.protogain
-   ProtoGain.utils
-   ProtoGain.manager
+   GainPro.dataset
+   GainPro.hypers
+   GainPro.model
+   GainPro.output
+   GainPro.generativeproteomics
+   GainPro.utils
+   GainPro.manager
 
 

@@ -1,7 +1,7 @@
 Params class
 ================
 
-.. automodule:: ProtoGain.hypers
+.. automodule:: GenerativeProteomics.hypers
    :members:
    :undoc-members:
    :show-inheritance:

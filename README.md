@@ -22,7 +22,7 @@ Here are the main components you'll find in this repository:
 
 1. .github/workflows 
     - contains the code for the automatization of the tests in the repository
-2. Datasets
+2. datasets
     - directory with datasets with missing values from PRIDE that can be used for testing 
 3. GenerativeProteomics: 
     - Contains the core package source code 

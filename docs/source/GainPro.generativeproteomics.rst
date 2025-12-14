@@ -1,7 +1,7 @@
 GenerativeProteomics Class
 ========================
 
-.. automodule:: ProtoGain.protogain
+.. automodule:: GenerativeProteomics.generativeproteomics
    :members:
    :undoc-members:
    :show-inheritance:

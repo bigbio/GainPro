@@ -26,7 +26,7 @@ In order to clone the repository, you should use the following command:
 
 .. code-block:: bash
 
-    git clone https://github.com/QuantitativeBiology/ProtoGain/
+    git clone https://github.com/QuantitativeBiology/GainPro/
 
 After cloning the repository, you should create a Python environment (versions 3.10 and 3.11).
 If you have Conda installed, you can use the following command:

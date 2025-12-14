@@ -1,7 +1,7 @@
 Data Class
 ========================
 
-.. automodule:: ProtoGain.dataset
+.. automodule:: GenerativeProteomics.dataset
    :members:
    :undoc-members:
    :show-inheritance:

@@ -21,7 +21,7 @@ GenerativeProteomics is a work that was developed to address the problem of miss
    Installation
    How to use
    Architecture 
-   ProtoGain
+   GainPro
    Tests
    
    

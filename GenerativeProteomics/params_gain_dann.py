@@ -261,7 +261,7 @@ class ParamsGainDann:
             }
         return params
     
-    def toJSON(self, path: str):
+    def to_json(self, path: str):
         with open(path, "w") as f:
             j = json.dump(
                     self,
