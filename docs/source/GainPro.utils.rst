@@ -1,7 +1,7 @@
 Utils Class
 ========================
 
-.. automodule:: ProtoGain.utils
+.. automodule:: GenerativeProteomics.utils
    :members:
    :undoc-members:
    :show-inheritance:

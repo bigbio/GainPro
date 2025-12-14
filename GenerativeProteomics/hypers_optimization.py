@@ -5,9 +5,9 @@ import os
 import matplotlib.pyplot as plt
 
 # from models import plot_folder
-from train import GainDannTrain
-from paramsgaindann import ParamsGainDann
-from data_utils import Data
+from GenerativeProteomics.train import GainDannTrain
+from GenerativeProteomics.params_gain_dann import ParamsGainDann
+from GenerativeProteomics.data_utils import Data
 
 
 class OptunaOptimization:
@@ -98,7 +98,7 @@ if __name__ == "__main__":
     best_hypers.update_hypers(best_trial.params)
 
     path = f"{results_folder}/optuna_{study_name}_best_hypers.json"
-    best_hypers.toJSON(path)
+    best_hypers.to_json(path)
     # with open(f"{results_folder}/optuna_{study_name}_best_hypers.json", "w") as f:
     #     json.dump(best_hypers, f, indent=2)
 

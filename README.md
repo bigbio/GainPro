@@ -22,7 +22,7 @@ Here are the main components you'll find in this repository:
 
 1. .github/workflows 
     - contains the code for the automatization of the tests in the repository
-2. Datasets
+2. datasets
     - directory with datasets with missing values from PRIDE that can be used for testing 
 3. GenerativeProteomics: 
     - Contains the core package source code 
@@ -121,7 +121,7 @@ Running in this manner will result in two separate training phases.
 
 2) Imputation run: Then a proper training phase takes place using the entire dataset. An `imputed.csv` file will be created containing the imputed dataset.
 
-However, there are a few arguments which you may want to change. You can do this using a parameters.json file (you may find an example in `GenerativeProteomics/breast/parameters.json`) or you can choose them directly in the command line.
+However, there are a few arguments which you may want to change. You can do this using a parameters.json file (you may find an example in `datasets/breast/parameters.json`) or you can choose them directly in the command line.
 
 Run with a parameters.json file: `python generativeproteomics.py --parameters /path/to/parameters.json`<br>
 Run with command line arguments: `python generativeproteomics.py -i /path/to/file_to_impute.csv -o imputed_name --ofolder ./results/ --it 2001`
@@ -157,8 +157,8 @@ In this repository you may find a folder named `breast`, inside it you have a br
 `breastMissing_20.csv`: the same dataset but with 20% of its values taken out
 
 
-To simply impute `breastMissing_20.csv` run: `python generativeproteomics.py -i ./breast/breastMissing_20.csv` <br>
-If you want to compare the imputation with the original dataset run: `python generativeproteomics.py -i ./breast/breastMissing_20.csv --ref ./breast/breast.csv` or `python generativeproteomics.py --parameters ./breast/parameters.json`
+To simply impute `breastMissing_20.csv` run: `python generativeproteomics.py -i ./datasets/breast/breastMissing_20.csv` <br>
+If you want to compare the imputation with the original dataset run: `python generativeproteomics.py -i ./datasets/breast/breastMissing_20.csv --ref ./datasets/breast/breast.csv` or `python generativeproteomics.py --parameters ./datasets/breast/parameters.json`
 
 
 If you want to go deep in the analysis of every metric you either set `--outall` to `1` or you run the code in an IPython console, this way you can access every variable you want in the `metrics` object, e.g. `metrics.loss_D`.

@@ -1,9 +1,16 @@
-from hypers import Params
-from model import Network
-from dataset import Data
-from output import Metrics
-from imputation_management import Imputation_Management
-import utils
+"""
+GenerativeProteomics - Main entry point for GAIN-based imputation.
+
+This module provides the command-line interface for running the 
+Generative Adversarial Imputation Network on proteomics datasets.
+"""
+
+from GenerativeProteomics.hypers import Params
+from GenerativeProteomics.model import Network
+from GenerativeProteomics.dataset import Data
+from GenerativeProteomics.output import Metrics
+from GenerativeProteomics.imputation_management import ImputationManagement
+from GenerativeProteomics import utils
 
 import torch
 from torch import nn
@@ -23,9 +30,13 @@ import psutil
 
 
 def init_arg():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-i", help="path to missing data")
-    parser.add_argument("-o", default="imputed", help="name of output file")
+    """Parse command-line arguments for the imputation pipeline."""
+    parser = argparse.ArgumentParser(
+        description="GenerativeProteomics (GainPro) - GAIN-based missing value imputation",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    parser.add_argument("-i", "--input", dest="i", help="path to missing data file")
+    parser.add_argument("-o", "--output", dest="o", default="imputed", help="name of output file")
     parser.add_argument("--ref", help="path to a reference (complete) dataset")
     parser.add_argument(
         "--ofolder", default=os.getcwd() + "/results/", help="path to output folder"
@@ -46,11 +57,14 @@ def init_arg():
         "--override", type=int, default=0, help="override previous files"
     )
     parser.add_argument("--outall", type=int, default=0, help="output all files")
-    parser.add_argument("--model", type = str, help = "indicates which model from HuggingFace to use")
+    parser.add_argument(
+        "--model", type=str, help="indicates which model from HuggingFace to use"
+    )
     return parser.parse_args()
 
 
-if __name__ == "__main__":
+def main():
+    """Main entry point for the GenerativeProteomics CLI."""
     start_time = time.time()
     with cProfile.Profile() as profile:
 
@@ -73,7 +87,6 @@ if __name__ == "__main__":
         override = args.override
         output_all = args.outall
         model = args.model
-
 
         if parameters_file is not None:
             params = Params.read_hyperparameters(parameters_file)
@@ -136,12 +149,11 @@ if __name__ == "__main__":
 
         if args.model is not None:
             print(args.model)
-            imputation_management = Imputation_Management(args.model, df_missing, missing_file)
+            imputation_management = ImputationManagement(args.model, df_missing, missing_file)
             imputation_management.run_model(args.model)
             exit(0)
 
         else:
-        
             dim = missing.shape[1]
             train_size = missing.shape[0]
 
@@ -167,7 +179,7 @@ if __name__ == "__main__":
             )
 
             metrics = Metrics(params)
-            model = Network(hypers=params, net_G=net_G, net_D=net_D, metrics=metrics)
+            network = Network(hypers=params, net_G=net_G, net_D=net_D, metrics=metrics)
 
             if ref_file is not None:
                 df_ref = pd.read_csv(ref_file)
@@ -186,12 +198,12 @@ if __name__ == "__main__":
                     exit(3.2)
 
                 data = Data(missing, miss_rate, hint_rate, ref)
-                model.train_ref(data, missing_header)
+                network.train_ref(data, missing_header)
 
             else:
                 data = Data(missing, miss_rate, hint_rate)
-                model.evaluate(data, missing_header)
-                model.train(data, missing_header)
+                network.evaluate(data, missing_header)
+                network.train(data, missing_header)
 
             run_time = []
             run_time.append(time.time() - start_time)
@@ -215,3 +227,7 @@ if __name__ == "__main__":
             results.sort_stats(pstats.SortKey.TIME)
             # results.print_stats()
             results.dump_stats("results.prof")
+
+
+if __name__ == "__main__":
+    main()

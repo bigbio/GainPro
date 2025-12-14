@@ -1,9 +1,8 @@
-from models.base_abstract import ImputationModel
-from models.gain_dann import GainDannImputationModel
-from models.medium import MediumImputationModel
+from GenerativeProteomics.models.gain_dann import GainDannImputationModel
+from GenerativeProteomics.models.medium import MediumImputationModel
 
 
-class Imputation_Management:
+class ImputationManagement:
     def __init__ (self, model, df_missing, missing_file_path):
         self.model = model
         self.df = df_missing

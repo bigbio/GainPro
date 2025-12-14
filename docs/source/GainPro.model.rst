@@ -1,7 +1,7 @@
 Network Class
 ========================
 
-.. automodule:: ProtoGain.model
+.. automodule:: GenerativeProteomics.model
    :members:
    :undoc-members:
    :show-inheritance:

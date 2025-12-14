@@ -1,12 +1,12 @@
 Imputation Manager Class
 ========================
 
-.. automodule:: ProtoGain.manager
+.. automodule:: GenerativeProteomics.imputation_management
    :members:
    :undoc-members:
    :show-inheritance:
 
-Here you will find the class `Imputation Manager` and other functions used by it 
+Here you will find the class `ImputationManagement` and other functions used by it 
 during the process of managing the selection of an imputation method besides GenerativeProteomics.
 This class works as a wrapper, allowing the user to easily add and use different imputation methods.
 
@@ -21,7 +21,7 @@ Methods
 --------
 - __init__(model, df, missing): 
 
-   Initializes the `Imputation_Manager` class by setting the model, dataset, 
+   Initializes the `ImputationManagement` class by setting the model, dataset, 
    and missing values file.
 
 - add_method(self, model, fn):

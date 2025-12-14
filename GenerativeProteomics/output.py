@@ -1,4 +1,4 @@
-from hypers import Params
+from GenerativeProteomics.hypers import Params
 import numpy as np
 import pandas as pd
 import os
@@ -32,8 +32,8 @@ class Metrics:
         self.data_imputed = None
         self.ref_data_imputed = None
 
-    def create_output(cls, data, name: str):
-        hypers = cls.hypers  # Accessing metrics.hypers
+    def create_output(self, data, name: str):
+        hypers = self.hypers  # Accessing metrics.hypers
 
         if hypers.override == 1:
             df = pd.DataFrame(data)

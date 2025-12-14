@@ -39,21 +39,21 @@ class Data:
         print("Number of features:", self.dataset.shape[1])
         print("Missing Rate (%):", (1.0 - self.mask.mean().item()) * 100.0, "\n")
 
-    def _create_ref(cls, miss_rate, hint_rate):
+    def _create_ref(self, miss_rate, hint_rate):
 
-        cls.ref_mask = cls.mask.detach().clone()
-        cls.ref_dataset = cls.dataset.detach().clone()
-        zero_idxs = torch.nonzero(cls.mask == 1)
+        self.ref_mask = self.mask.detach().clone()
+        self.ref_dataset = self.dataset.detach().clone()
+        zero_idxs = torch.nonzero(self.mask == 1)
         chance = torch.rand(len(zero_idxs))
         miss = chance > miss_rate
 
         selected_idx = zero_idxs[~miss]
         for idx in selected_idx:
-            cls.ref_mask[tuple(idx)] = 0
-            cls.ref_dataset[tuple(idx)] = 0
+            self.ref_mask[tuple(idx)] = 0
+            self.ref_dataset[tuple(idx)] = 0
 
-        cls.ref_hint = generate_hint(cls.ref_mask, hint_rate)
-        cls.ref_dataset_scaled = torch.from_numpy(cls.scaler.transform(cls.ref_dataset))
+        self.ref_hint = generate_hint(self.ref_mask, hint_rate)
+        self.ref_dataset_scaled = torch.from_numpy(self.scaler.transform(self.ref_dataset))
 
 
 def generate_hint(mask, hint_rate):

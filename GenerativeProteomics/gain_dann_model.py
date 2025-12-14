@@ -1,23 +1,23 @@
 import torch
 import torch.nn as nn
 
-from encoder import Encoder
-from decoder import Decoder
-from domain_classifier import DomainClassifier
-from grl import GradientReversalLayer
-from model import Network
-from hypers import Params
-from output import Metrics
+from GenerativeProteomics.encoder import Encoder
+from GenerativeProteomics.decoder import Decoder
+from GenerativeProteomics.domain_classifier import DomainClassifier
+from GenerativeProteomics.grl import GradientReversalLayer
+from GenerativeProteomics.model import Network
+from GenerativeProteomics.hypers import Params
+from GenerativeProteomics.output import Metrics
 
 
 #-----------------------------------#
 #          DANN GAIN model          #
 #-----------------------------------#
-class GAIN_DANN(nn.Module):
+class GainDann(nn.Module):
     def __init__(self, protein_names: list[str], 
                 input_dim: int, latent_dim: int, n_class: int, num_hidden_layers: int, 
                 dann_params: dict, gain_params: Params, gain_metrics: Metrics):
-        super(GAIN_DANN, self).__init__()
+        super(GainDann, self).__init__()
 
         self.protein_names = protein_names
 
@@ -62,7 +62,7 @@ class GAIN_DANN(nn.Module):
 
     def forward(self, x: torch.tensor):
         """
-            Forward pass of GAIN_DANN.
+            Forward pass of GainDann.
             
             Args:
                 - x (torch.tensor): Dataset to be imputed
