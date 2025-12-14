@@ -19,7 +19,6 @@ from GenerativeProteomics.train import GainDannTrain
 # post analysis
 # from umap_analysis import umap_analysis
 # from pca_analysis import pca_analysis
-from GenerativeProteomics.correlation import correlation_measured_predicted
 
 import logging
 import argparse
