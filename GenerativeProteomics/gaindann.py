@@ -15,7 +15,6 @@ from GenerativeProteomics.output import Metrics
 from GenerativeProteomics.params_gain_dann import ParamsGainDann
 from GenerativeProteomics.data_utils import Data
 from GenerativeProteomics.train import GainDannTrain
-from GenerativeProteomics.dann_utils import inverse_transform_output
 
 # post analysis
 # from umap_analysis import umap_analysis
