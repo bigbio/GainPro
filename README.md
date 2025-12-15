@@ -169,7 +169,7 @@ If you want to go deep in the analysis of every metric you either set `--outall`
 
 The repository also includes a hybrid model combining Domain Adversarial Neural Networks (DANN) with GAIN for domain-adaptive imputation.
 
-To prepare the HeLa dataset for the **DANN & GAIN** hybrid model, run the `hela_dann.ipynb` notebook first and alter the directory of the HeLa dataset in the third cell of the notebook.
+To prepare the HeLa dataset for the **DANN & GAIN** hybrid model, run the `hela_dann.ipynb` notebook first and update the dataset path for the HeLa dataset in the third cell of the notebook.
 
 
 ## References
