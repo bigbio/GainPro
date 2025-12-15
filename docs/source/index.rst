@@ -17,12 +17,12 @@ gainpro is a work that was developed to address the problem of missing data in t
    :maxdepth: 14
    :caption: Contents:
 
-   Introduction
-   Installation
-   How to use
-   Architecture 
-   GainPro
-   Tests
+   introduction
+   installation
+   how_to_use
+   architecture
+   gainpro
+   tests
    
    
 
