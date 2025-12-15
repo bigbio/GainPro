@@ -15,17 +15,25 @@ class TestImputationManagement(unittest.TestCase):
     
     
     def test_correct_model(self):
-        """test running a correct model"""
+        """test running a custom model after adding it"""
 
         self.seed = 42  
         np.random.seed(self.seed)
         torch.manual_seed(self.seed)
         random.seed(self.seed)
 
-        df_missing = pd.read_csv("hela_missing_dann.csv")
-        imputation_management = ImputationManagement("GAIN_DANN_model", df_missing, "hela_missing_dann.csv")
-        imputation_management.run_model("GAIN_DANN_model")
-        self.assertTrue(os.path.isdir("GAIN_DANN_model"), "The directory does not exist")
+        # Define a simple custom imputation function
+        def custom_imputation(df):
+            df_copy = df.copy()
+            numeric_cols = df_copy.select_dtypes(include=[np.number]).columns
+            df_copy[numeric_cols] = df_copy[numeric_cols].fillna(0)
+            return df_copy
+
+        df_missing = pd.read_csv("breastMissing_20.csv")
+        imputation_management = ImputationManagement("custom_model", df_missing, "breastMissing_20.csv")
+        imputation_management.add_method("custom_model", custom_imputation)
+        result = imputation_management.run_model("custom_model")
+        self.assertIsNotNone(result, "Custom imputation should return a result")
 
     def test_incorrect_model(self):
         """test the class with an incorrect model"""
@@ -43,18 +51,11 @@ class TestImputationManagement(unittest.TestCase):
 
     def test_add_exhisting_model(self):
         """test to try adding model already known"""
-        imputation_management = ImputationManagement("GAIN_DANN_model", None, "hela_missing_dann.csv")
-        with self.assertRaises(SystemExit):
-            imputation_management.add_method("GAIN_DANN_model", "hugging_face_gain_dann")
-            
-
-    def test_medium_imputation(self):
-        """test the medium imputation method"""
         df_missing = pd.read_csv("breastMissing_20.csv")
-        imputation_management = ImputationManagement("medium_imputation", df_missing, "breastMissing_20.csv")
-        result = imputation_management.run_model("medium_imputation")
-        file = pd.read_csv("output_medium.csv")
-        np.testing.assert_allclose(result, file, rtol=1e-8, atol=1e-12, err_msg="There are still missing values after medium imputation")
+        imputation_management = ImputationManagement("test_model", df_missing, "breastMissing_20.csv")
+        imputation_management.add_method("test_model", lambda x: x)
+        with self.assertRaises(SystemExit):
+            imputation_management.add_method("test_model", "some_function")
 
 if __name__ == '__main__':
     unittest.main()

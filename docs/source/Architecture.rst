@@ -25,9 +25,7 @@ This diagram illustrates the overall architecture of GenerativeProteomics, showi
 - **Params**: Stores hyperparameters and passes them to the network.
 - **Metrics**: Computes key metrics such as loss values for both the Discriminator and Generator.
 - **Utils**: Provides auxiliary functions like indexing, output generation, and CSV creation.
-- **ImputationManager**: Manages the selection and execution of different imputation methods.
-- **ImputationModel**: Provides a common API to the difference pre-trained models that can be used, ensuring their consistency and compatibility with the rest of the codebase.
-- **GainDannImputationModel**: Contains the logic of the GAIN-DANN imputation method.
+- **ImputationManager**: Factory class for managing custom imputation methods (for extensibility).
 
 Execution Flow   
 --------------
@@ -40,6 +38,7 @@ Execution Flow
 6. The model outputs files such as `impute.csv`, `test_imputed.csv`, and performance metrics like `loss_G` and `loss_D`.
 7. The `ImputationManager` class allows users to select and run different imputation methods.
 8. The `ImputationModel` class serves as a base for various imputation models, ensuring a consistent interface.
+9. Pre-trained HuggingFace models can be downloaded and used via the `gainpro download` command.
 
 
 This structure ensures **modularity, maintainability, and scalability**, making it easier to extend GenerativeProteomics.
