@@ -1,7 +1,7 @@
 Params class
 ================
 
-.. automodule:: GenerativeProteomics.hypers
+.. automodule:: gainpro.hypers
    :members:
    :undoc-members:
    :show-inheritance:

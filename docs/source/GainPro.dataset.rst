@@ -1,7 +1,7 @@
 Data Class
 ========================
 
-.. automodule:: GenerativeProteomics.dataset
+.. automodule:: gainpro.dataset
    :members:
    :undoc-members:
    :show-inheritance:

@@ -1,6 +1,6 @@
-# Generative Proteomics Tests
+# GainPro Tests
 
-In this directory, you can find the tests for the GenerativeProteomics model.
+In this directory, you can find the tests for the GainPro model.
 
 ## Tests 
 

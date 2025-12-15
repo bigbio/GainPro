@@ -1,4 +1,4 @@
-from GenerativeProteomics.hypers import Params
+from gainpro.hypers import Params
 import numpy as np
 import pandas as pd
 import os

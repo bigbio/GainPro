@@ -1,13 +1,13 @@
 Imputation Manager Class
 ========================
 
-.. automodule:: GenerativeProteomics.imputation_management
+.. automodule:: gainpro.imputation_management
    :members:
    :undoc-members:
    :show-inheritance:
 
 Here you will find the class `ImputationManagement` and other functions used by it 
-during the process of managing the selection of an imputation method besides GenerativeProteomics.
+during the process of managing the selection of an imputation method besides GainPro.
 This class works as a wrapper, allowing the user to easily add and use different imputation methods.
 
 Attributes

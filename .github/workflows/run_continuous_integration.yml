@@ -4,14 +4,14 @@ on:
   push:
     branches: [main, master, develop]
     paths:
-      - 'GenerativeProteomics/**'
+      - 'gainpro/**'
       - 'tests/**'
       - 'requirements.txt'
       - 'pyproject.toml'
   pull_request:
     branches: [main, master, develop]
     paths:
-      - 'GenerativeProteomics/**'
+      - 'gainpro/**'
       - 'tests/**'
       - 'requirements.txt'
       - 'pyproject.toml'
@@ -46,6 +46,8 @@ jobs:
           pip install -r requirements.txt
           # Ensure numpy < 2 for PyTorch compatibility
           pip install "numpy<2"
+          # Install package in editable mode for import tests
+          pip install -e .
 
       - name: Run tests
         run: |
@@ -54,4 +56,4 @@ jobs:
 
       - name: Test package import
         run: |
-          python -c "from GenerativeProteomics import Data, Params, Network, Metrics; print('Package imports successful!')"
+          python -c "from gainpro import Data, Params, Network, Metrics; print('Package imports successful!')"

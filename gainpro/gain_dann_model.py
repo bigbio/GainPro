@@ -1,13 +1,13 @@
 import torch
 import torch.nn as nn
 
-from GenerativeProteomics.encoder import Encoder
-from GenerativeProteomics.decoder import Decoder
-from GenerativeProteomics.domain_classifier import DomainClassifier
-from GenerativeProteomics.grl import GradientReversalLayer
-from GenerativeProteomics.model import Network
-from GenerativeProteomics.hypers import Params
-from GenerativeProteomics.output import Metrics
+from gainpro.encoder import Encoder
+from gainpro.decoder import Decoder
+from gainpro.domain_classifier import DomainClassifier
+from gainpro.grl import GradientReversalLayer
+from gainpro.model import Network
+from gainpro.hypers import Params
+from gainpro.output import Metrics
 
 
 #-----------------------------------#

@@ -20,20 +20,42 @@ import time
 import cProfile
 import pstats
 
-import matplotlib.pyplot as plt
-import umap.umap_ as umap
+# Optional visualization imports (only needed for certain features)
+try:
+    import seaborn as sns
+    import matplotlib.pyplot as plt
+    import umap.umap_ as umap
+except ImportError:
+    # These are optional dependencies for visualization features
+    sns = None
+    plt = None
+    umap = None
 
-# Model imports
-from GenerativeProteomics.gain_dann_model import GainDann
-from GenerativeProteomics.model import Network
-from GenerativeProteomics.hypers import Params
-from GenerativeProteomics.output import Metrics
-from GenerativeProteomics.params_gain_dann import ParamsGainDann
-from GenerativeProteomics.data_utils import Data as DataDANN
-from GenerativeProteomics.dataset import Data
-from GenerativeProteomics.train import GainDannTrain
-from GenerativeProteomics import utils
-from GenerativeProteomics.imputation_management import ImputationManagement
+# Model imports - use try/except to handle both relative and absolute imports
+try:
+    # Try relative imports first (when run as package module)
+    from .gain_dann_model import GainDann
+    from .model import Network
+    from .hypers import Params
+    from .output import Metrics
+    from .params_gain_dann import ParamsGainDann
+    from .data_utils import Data as DataDANN
+    from .dataset import Data
+    from .train import GainDannTrain
+    from . import utils
+    from .imputation_management import ImputationManagement
+except ImportError:
+    # Fall back to absolute imports (when run as script or in test environment)
+    from gainpro.gain_dann_model import GainDann
+    from gainpro.model import Network
+    from gainpro.hypers import Params
+    from gainpro.output import Metrics
+    from gainpro.params_gain_dann import ParamsGainDann
+    from gainpro.data_utils import Data as DataDANN
+    from gainpro.dataset import Data
+    from gainpro.train import GainDannTrain
+    from gainpro import utils
+    from gainpro.imputation_management import ImputationManagement
 from huggingface_hub import hf_hub_download
 from sklearn.preprocessing import LabelEncoder
 import sys

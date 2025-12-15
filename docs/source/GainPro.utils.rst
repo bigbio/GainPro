@@ -1,7 +1,7 @@
 Utils Class
 ========================
 
-.. automodule:: GenerativeProteomics.utils
+.. automodule:: gainpro.utils
    :members:
    :undoc-members:
    :show-inheritance:

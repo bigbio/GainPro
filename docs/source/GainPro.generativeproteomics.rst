@@ -1,13 +1,13 @@
-GenerativeProteomics Class
+gainpro Class
 ========================
 
-.. automodule:: GenerativeProteomics.generativeproteomics
+.. automodule:: gainpro.generativeproteomics
    :members:
    :undoc-members:
    :show-inheritance:
 
-Here you will find the class `GenerativeProteomics` used during the training and evaluation of the model.
-The `GenerativeProteomics` class is responsible for setting up, initializing, and running the GenerativeProteomics imputation process. 
+Here you will find the class `gainpro` used during the training and evaluation of the model.
+The `gainpro` class is responsible for setting up, initializing, and running the gainpro imputation process. 
 It reads input arguments, configures the model, trains it, and saves the results.
 
 Methods

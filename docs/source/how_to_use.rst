@@ -1,7 +1,7 @@
-How to use GenerativeProteomics
+How to use gainpro
 =================================
 
-If your main goal is simply to just impute a general dataset, the most straightforward and simplest way to use GenerativeProteomics is to run:
+If your main goal is simply to just impute a general dataset, the most straightforward and simplest way to use gainpro is to run:
 
 .. code-block:: bash
 
@@ -42,7 +42,7 @@ Arguments:
 - **--miss**: The percentage of values to be concealed during the evaluation run (from 0 to 1)
 - **--outall**: Set this argument to 1 if you want to output every metric
 - **--override**: Set this argument to 1 if you want to delete the previously created files when writing the new output
-- **--model**: Choose the model to use (None if GenerativeProteomics, otherwise provide name of the pre-trained model)
+- **--model**: Choose the model to use (None if gainpro, otherwise provide name of the pre-trained model)
 
 If you want to assess the efficiency of the code you may provide a reference file containing a complete version of the dataset (without missing values):
 

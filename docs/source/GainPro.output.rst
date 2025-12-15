@@ -1,7 +1,7 @@
 Metrics Class
 ========================   
 
-.. automodule:: GenerativeProteomics.output
+.. automodule:: gainpro.output
    :members:
    :undoc-members:
    :show-inheritance:

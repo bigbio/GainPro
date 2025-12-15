@@ -5,9 +5,9 @@ import os
 import matplotlib.pyplot as plt
 
 # from models import plot_folder
-from GenerativeProteomics.train import GainDannTrain
-from GenerativeProteomics.params_gain_dann import ParamsGainDann
-from GenerativeProteomics.data_utils import Data
+from gainpro.train import GainDannTrain
+from gainpro.params_gain_dann import ParamsGainDann
+from gainpro.data_utils import Data
 
 
 class OptunaOptimization:

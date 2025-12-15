@@ -8,17 +8,17 @@ from sklearn.model_selection import StratifiedKFold
 from torch.utils.data import DataLoader, TensorDataset, WeightedRandomSampler
 
 # model
-from GenerativeProteomics.gain_dann_model import GainDann
-from GenerativeProteomics.hypers import Params
-from GenerativeProteomics.dataset import generate_hint
-from GenerativeProteomics.output import Metrics
+from gainpro.gain_dann_model import GainDann
+from gainpro.hypers import Params
+from gainpro.dataset import generate_hint
+from gainpro.output import Metrics
 
-from GenerativeProteomics.data_utils import Data
-from GenerativeProteomics.params_gain_dann import ParamsGainDann
-from GenerativeProteomics.early_stopping import EarlyStopping
-from GenerativeProteomics.metrics import MetricsTracker
-from GenerativeProteomics.evaluation import EvaluationTracker
-from GenerativeProteomics.dann_utils import save_model
+from gainpro.data_utils import Data
+from gainpro.params_gain_dann import ParamsGainDann
+from gainpro.early_stopping import EarlyStopping
+from gainpro.metrics import MetricsTracker
+from gainpro.evaluation import EvaluationTracker
+from gainpro.dann_utils import save_model
 
 import logging
 
