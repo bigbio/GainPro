@@ -1,7 +1,7 @@
-from GenerativeProteomics.hypers import Params
-from GenerativeProteomics.dataset import Data
-from GenerativeProteomics.output import Metrics
-from GenerativeProteomics import utils
+from gainpro.hypers import Params
+from gainpro.dataset import Data
+from gainpro.output import Metrics
+from gainpro import utils
 
 import torch
 from torch import nn

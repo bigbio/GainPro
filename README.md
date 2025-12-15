@@ -1,6 +1,6 @@
 # GainPro
 
-[![PyPi Version](https://img.shields.io/pypi/v/GenerativeProteomics?label=PyPi&color=blue&style=flat&logo=pypi)](https://pypi.org/project/GenerativeProteomics/)
+[![PyPi Version](https://img.shields.io/pypi/v/gainpro?label=PyPi&color=blue&style=flat&logo=pypi)](https://pypi.org/project/gainpro/)
 [![Colab](https://img.shields.io/badge/Google_Colab-0061F2?style=flat&logo=googlecolab&color=blue&label=Colab&colorB=grey)](https://colab.research.google.com/drive/1ihtmsv_UvEz74YrLHZvATu1y2qH4X9-r?usp=sharing)
 [![Documentation](https://img.shields.io/badge/docs-read%20the%20docs-blue)](https://generativeproteomics.readthedocs.io/en/latest/)
 [![HuggingFace](https://img.shields.io/badge/Hugging_Face-grey?style=flat&logo=huggingface&color=grey)](https://huggingface.co/QuantitativeBiology)
@@ -35,7 +35,7 @@
 The package is available on PyPI. Install it using:
 
 ```bash
-pip install GenerativeProteomics
+pip install gainpro
 ```
 
 ### From Source
@@ -174,7 +174,7 @@ gainpro train --help
 GainPro can also be used programmatically through its Python API:
 
 ```python
-from GenerativeProteomics import utils, Network, Params, Metrics, Data
+from gainpro import utils, Network, Params, Metrics, Data
 import torch
 import pandas as pd
 
@@ -241,7 +241,7 @@ Main components of the repository:
 
 - **`.github/workflows`**: CI/CD workflows for automated testing
 - **`datasets/`**: Sample datasets with missing values from PRIDE for testing
-- **`GenerativeProteomics/`**: Core package source code
+- **`gainpro/`**: Core package source code
   - `gainpro.py`: Main CLI interface (unified command with subcommands)
   - `model.py`: Basic GAIN model implementation
   - `gain_dann_model.py`: GAIN-DANN model implementation

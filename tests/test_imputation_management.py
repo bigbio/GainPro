@@ -6,10 +6,10 @@ import os
 import sys 
 import pandas as pd
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "GenerativeProteomics")))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "gainpro")))
 
-from GenerativeProteomics.imputation_management import ImputationManagement 
-import GenerativeProteomics.utils 
+from gainpro.imputation_management import ImputationManagement 
+import gainpro.utils 
 
 class TestImputationManagement(unittest.TestCase):
     

@@ -1,4 +1,4 @@
-# Core dependencies for GenerativeProteomics
+# Core dependencies for GainPro
 # For development installation, use: pip install -e ".[dev]"
 
 torch>=2.0.0

@@ -10,7 +10,7 @@ echo "Running $NUM_RUNS imputation runs with parameters: $PARAMS_FILE"
 for run in $(seq 1 $NUM_RUNS)
 do
     echo "Running run = $run / $NUM_RUNS"
-    python -m GenerativeProteomics.generativeproteomics --parameters "$PARAMS_FILE"
+    gainpro gain --parameters "$PARAMS_FILE"
 done
 
 echo "Completed all $NUM_RUNS runs"

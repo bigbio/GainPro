@@ -1,6 +1,6 @@
 """
-GenerativeProteomics (GainPro)
-==============================
+GainPro
+=======
 
 A PyTorch implementation of Generative Adversarial Imputation Networks (GAIN)
 for imputing missing values in proteomics datasets.
@@ -15,7 +15,7 @@ Main Classes
 
 Example Usage
 -------------
->>> from GenerativeProteomics import Data, Params, Network, Metrics
+>>> from gainpro import Data, Params, Network, Metrics
 >>> import torch
 >>> import pandas as pd
 >>>
@@ -41,18 +41,18 @@ __version__ = "0.2.0"
 __author__ = "QuantitativeBiology"
 
 # Core classes
-from GenerativeProteomics.dataset import Data
-from GenerativeProteomics.hypers import Params
-from GenerativeProteomics.model import Network
-from GenerativeProteomics.output import Metrics
-from GenerativeProteomics.imputation_management import ImputationManagement
+from .dataset import Data
+from .hypers import Params
+from .model import Network
+from .output import Metrics
+from .imputation_management import ImputationManagement
 
 # Utilities
-from GenerativeProteomics import utils
+from . import utils
 
 # GAIN-DANN components (optional, for advanced usage)
-from GenerativeProteomics.gain_dann_model import GainDann
-from GenerativeProteomics.params_gain_dann import ParamsGainDann
+from .gain_dann_model import GainDann
+from .params_gain_dann import ParamsGainDann
 
 __all__ = [
     # Core classes

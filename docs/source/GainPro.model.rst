@@ -1,7 +1,7 @@
 Network Class
 ========================
 
-.. automodule:: GenerativeProteomics.model
+.. automodule:: gainpro.model
    :members:
    :undoc-members:
    :show-inheritance:
