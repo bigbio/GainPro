@@ -20,7 +20,6 @@ import time
 import cProfile
 import pstats
 
-import seaborn as sns
 import matplotlib.pyplot as plt
 import umap.umap_ as umap
 
