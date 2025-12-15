@@ -13,6 +13,10 @@ anndata
 polars
 huggingface_hub
 transformers
+click>=8.0
+
+# Interactive CLI (optional, for checkpoint selection)
+inquirer
 
 # Visualization (optional)
 holoviews

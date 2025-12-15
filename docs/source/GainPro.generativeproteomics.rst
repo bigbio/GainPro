@@ -17,7 +17,7 @@ Methods
 
     **Steps:**
 
-    1. Parses Command-Line Arguments using argparse to obtain user-defined settings.
+    1. Parses Command-Line Arguments using Click to obtain user-defined settings.
     2. Loads Hyperparameters either from command-line arguments or a JSON configuration file.
     3. Reads the Dataset (CSV/TSV format) and preprocesses it.
     4. Initializes the Generator (G) and Discriminator (D) Networks with a specific architecture.

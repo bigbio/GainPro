@@ -57,6 +57,7 @@ dependencies = [
     "polars",
     "huggingface_hub",
     "transformers",
+    "click>=8.0",
 ]
 
 [project.optional-dependencies]
@@ -92,7 +93,8 @@ Issues = "https://github.com/QuantitativeBiology/GainPro/issues"
 Changelog = "https://github.com/QuantitativeBiology/GainPro/releases"
 
 [project.scripts]
-gainpro = "GenerativeProteomics.generativeproteomics:main"
+gainpro = "GenerativeProteomics.gainpro:main"
+gain = "GenerativeProteomics.gainpro:gain_main"  # Backward compatibility wrapper: use 'gainpro gain' instead
 
 [tool.setuptools]
 packages = ["GenerativeProteomics"]
