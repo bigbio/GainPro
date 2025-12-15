@@ -1,4 +1,4 @@
-gainpro Code
+GainPro Code
 ==========================
 
 In this section, we will provide a more detailed explanation of the classes used in gainpro.
